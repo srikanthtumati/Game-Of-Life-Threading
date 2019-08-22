@@ -1,0 +1,18 @@
+Srikanth Tumati
+===============
+
+Guide
+-----
+
+1) Go the Configuration Panel (click on the menu) and choose values to your liking. The user is able to choose, number of rows, number of columns, max ticks, folder pattern, file pattern, and number of threads used (with the number of CPUs available to the JVM listed at the bottom. It is also possible to see double the cores that are actually on your machine due to Hyper-threading). Note that it is at this time that the user should choose the range of ticks they want saved as output files with the starting number being inclusive and the ending number being exclusive. Additionally, it should be mentioned that output files will not immediately work as files that can be used as "load files" for the program as the dimensions of the board file should be listed in the first line. An example file that can actually be loaded by the program is provided in the "tests" folder for convenience.
+
+2) Press "Auto Play" on the bottom left and wait for the ticks to be completed. After completion, your saved ticks will be in the folder you named as well as in the file pattern you choose. Additionally, the current tick is shown on the right for the user's convenience.
+
+3) Press reset in the menu to get a board (same row and column size) with the states being randomly chosen once again and the tick being set to 0.
+
+4) Enjoy!
+
+It should be mentioned that as per the assignment requirements, choosing the state of individual cells is disabled as it is problematic due to the size of the boards used in this assignment. However, loading in a board allows the user to have the same functionality as these text files are easily modifiable.
+
+Lastly, it should be noted that the file manager from JavaFX 12 is currently broken in the developer builds of Mac OS Catalina and it is possible that does not function in Windows as well. However, since it functions perfectly in Ubuntu 18.04, it has been included in the program.
+

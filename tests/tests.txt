@@ -1,0 +1,21 @@
+Srikanth Tumati
+===============
+
+Tests Performed
+---------------
+
+Loading a file immediately after starting the application (verified on Ubuntu 18.04)
+
+Saving a certain range of ticks (verified on Mac OS Catalina)
+
+Running the application with boards of size 5,000 and 1,000 (verified on Mac OS Catalina)
+
+Resetting the board from the menu (verified on Mac OS Catalina & Ubuntu 18.04)
+
+Changing the board size from the menu (verified on Mac OS Catalina)
+
+Changing various parameters in the Configuration Panel such as number of threads, max tick, and folder name (verified on Mac OS Catalina)
+
+Checked that the label that displays the current tick still has the correct value even after the board is reset or another board is loaded in. (verified on Mac OS Catalina)
+
+Checked that the output files are printing the correct board (verified on Mac OS Catalina)

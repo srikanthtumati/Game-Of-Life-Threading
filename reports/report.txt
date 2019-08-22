@@ -1,0 +1,51 @@
+Srikanth Tumati
+===============
+
+Graph Captions
+--------------
+Graph #1 is the time vs thread graph when the user has chosen a 1000x1000 grid and runs it for 1000 ticks. 
+Graph #2 is the time vs thread graph when the user has chosen a 5000x5000 grid and runs it for 1000 ticks. 
+Graph #3 is the time vs thread graph when the user has chosen a 7500x7500 grid and runs it for 1000 ticks. 
+
+All 3 of the graphs were tested with the same number of threads (1, 2, 3, 6, and 12).
+
+Write-up
+--------
+When looking at all the graphs it becomes quite obvious that they all share a similar pattern. They all reveal
+that the performance (when performance is considered to be inverse to time needed) follows an exponential decay function. 
+There is a tremendous increase in performance (or decrease in time needed) when multithreading is introduced (or when the program
+shifts from 1 thread to 2 thread). In fact, the time needed to complete the simulation is almost reduced by 50% for the larger graphs
+(the 5000x5000 and 7500x7500). However, this decrease in time drops at a much slower rate once more threads are added and the improvement
+almost becomes unnoticeable. 
+
+This program benefited tremendously by converting the board that stored the cell state from integers to bytes. This reduced the memory
+needed for the boards by 25% (as ints are 32 bits and bytes are 8 bits) and this helped tremendously when working with larger boards
+as the program actually has 2 boards internally (one for current data and one for the next tick). This improvement (coupled with the 
+newly added multithreading) allowed the program to complete at nearly 50% of the time needed to complete with a single thread.
+
+Ultimately, this reveals that after a certain point, there is a small (or no) benefit to increase the number of threads that are working
+on a certain task. While large tasks certainly do benefit from having multiple threads working on them, there seems to always exist a 
+point (3 threads for the 1000x1000 and 6 threads for the other two graphs) where the time needed to complete the task reduces by only a 
+minuscule amount.
+
+Data
+----
+Lastly, here are all the raw time values collected from the program. These values are in nanoseconds and are the same values that are graphed.
+
+1000x1000 1 thread 43,740,494,226
+1000x1000 2 threads 34,543,642,534
+1000x1000 3 threads 29,003,115,855
+1000x1000 6 threads 27,958,433,996
+1000x1000 12 threads 27,352,873,467
+
+5000x5000 1 thread 741,222,463,096
+5000x5000 2 threads 484,167,915,765
+5000x5000 3 threads 401,884,413,808
+5000x5000 6 threads 333,640,992,852
+5000x5000 12 threads 330,529,129,261
+
+7500x7500 1 thread 1,839,902,797,417
+7500x7500 2 threads 1,128,622,455,936
+7500x7500 3 threads 967,053,676,095
+7500x7500 6 threads 739,235,561,723 
+7500x7500 12 threads 734,563,423,810

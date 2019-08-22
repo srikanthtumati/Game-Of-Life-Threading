@@ -1,0 +1,6 @@
+cd ..
+javac -cp . --module-path Source\ Code/javafx-sdk-12.0.1/lib --add-modules javafx.controls Source\ Code/src/edu/rpi/cs/csci4963/u19/tumats/hw04/gol_threads/*.java
+mkdir -p Source\ Code/out/production/edu/rpi/cs/csci4963/u19/tumats/hw04/gol_threads
+mv Source\ Code/src/edu/rpi/cs/csci4963/u19/tumats/hw04/gol_threads/*.class Source\ Code/out/production/edu/rpi/cs/csci4963/u19/tumats/hw04/gol_threads
+javadoc -private -splitindex -use -author -version -d ./docs -classpath "./Source Code/src:./Source Code/javafx-sdk-12.0.1/lib/src.zip:./Source Code/javafx-sdk-12.0.1/lib/javafx-swt.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.web.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.base.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.fxml.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.media.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.swing.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.controls.jar:./Source Code/javafx-sdk-12.0.1/lib/javafx.graphics.jar" edu.rpi.cs.csci4963.u19.tumats.hw04.gol_threads
+java -cp "Source Code/out/production" --module-path Source\ Code/javafx-sdk-12.0.1/lib --add-modules javafx.controls edu.rpi.cs.csci4963.u19.tumats.hw04.gol_threads.GameOfLifeUI
